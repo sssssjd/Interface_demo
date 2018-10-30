@@ -33,7 +33,7 @@ if __name__ == '__main__':
     with open(file_location, 'wb') as f:
         runner = HTMLTestRunner(stream=f,
                                 title='TestLogin Report',
-                                description='人人说登录接口测试',
+                                description='登录接口测试',
                                 tester='ssssjd',
                                 verbosity=2
                                 )

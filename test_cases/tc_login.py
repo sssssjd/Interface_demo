@@ -12,9 +12,9 @@ import logging
 from common.operating_data import getdata_xlsx
 
 registerdata = getdata_xlsx.get_xlsxdata('C://Users//faqkingphone1//PycharmProjects//'
-                                     'Interface_demo//test_data//login_data.xlsx', '注册接口')
+                                     'Interface_demo//test_data//login_data_template.xlsx', '注册接口')
 logindata = getdata_xlsx.get_xlsxdata('C://Users//faqkingphone1//PycharmProjects//'
-                                     'Interface_demo//test_data//login_data.xlsx', '登录接口')
+                                     'Interface_demo//test_data//login_data_template.xlsx', '登录接口')
 logging.basicConfig(filename='C://Users//faqkingphone1//PycharmProjects//'
                              'Interface_demo//test_result//log1.log', level=logging.INFO)
 
@@ -29,7 +29,7 @@ class TestLogin(unittest.TestCase):
 
     @ddt.data(*logindata)
     def test_login(self, data):
-        """人人说前端用户登录测试"""
+        """登录测试"""
         rq_method = data['method']
         url = data['url']
         if data['params']:
@@ -51,7 +51,7 @@ class TestLogin(unittest.TestCase):
 
     @ddt.data(*registerdata)
     def test_register(self, data):
-        """人人说前端用户注册测试"""
+        """用户注册测试"""
         rq_method = data['method']
         url = data['url']
         if data['params']:
